@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(16, 10, 78);
+    width: 95vw;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.innerDiv {
+    color: white;
+}
+
+.main-heading {
+    font-size: 90px;
+}

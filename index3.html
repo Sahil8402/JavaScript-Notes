@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #2a364f;
+            display: grid;
+            place-items: center;
+        }
+        
+        button {
+            display: inline-block;
+            background: yellow;
+            color: black;
+            font-size: 16px;
+            width: 130px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 10px 22px;
+            z-index: 100000;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        p,
+        h1,
+        form {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="para">Plz Learn Javascript</p>
+    <p class="para">Plz Learn web development</p>
+    <p>Don't do time pass..</p>
+    <h1 id="heading">changed the content of the h1</h1>
+    <form action="">
+        <label for="">Male</label>
+        <input type="radio" name="gender" id="">
+        <label for="">Female</label>
+        <input type="radio" name="gender" id="">
+        <label for="">MaleFemale</label>
+        <input type="radio" name="gender" id="">
+    </form>
+    <br>
+    <button onclick="changeContent()">Click Me</button>
+
+    <script>
+        const changeContent = () => {
+            //1)
+            //we directly write
+            //     document.getElementById('heading').innerHTML = "JavaScript is so Easy..."
+
+            //2)by taking the Reference, heading is the object here
+            const headingChange = document.getElementById('heading');
+            headingChange.innerHTML = "JavaScript is so Easy...";
+            //3)by class name
+            //console.log(document.getElementsByClassName('para'));
+            //console.log(document.getElementsByTagName('p'));
+            console.log(document.getElementsByName('gender'));
+
+            //Now the same we have is the query selectors
+            //querySelector returns the first matching value whereas
+            //querySelectorAll()will return all the elements
+
+            // document.querySelector('#heading').innerHTML = "Sahil sakshi vache javascript..";
+            //document.querySelector('.para').innerHTML = "Sahil sakshi vache javascript..";
+            //console.log(document.querySelectorAll('#heading'));
+            console.log(document.querySelectorAll('.para'));
+
+        }
+    </script>
+</body>
+
+</html>

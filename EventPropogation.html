@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Inconsolta', sans-serif;
+            background: #2a364f;
+        }
+        
+        .main-div {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        
+        .parentDiv {
+            width: 400px;
+            height: 400px;
+            background: gold;
+            border: 2px solid;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+        }
+        
+        .childDiv {
+            width: 250px;
+            height: 250px;
+            background: red;
+            border: 2px solid;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="parentDiv" id="parentId">
+            <div class="childDiv" id="childId">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const parentId = document.getElementById('parentId');
+        const childId = document.getElementById('childId');
+
+        const parentCall = () => {
+            alert('Parent Div Call');
+        };
+
+        const childCall = () => {
+            alert('Child Div Call');
+            //to show only one.
+            //event.stopPropagation();
+        };
+        //by default it is Event Bubbling.
+        parentId.addEventListener('click', parentCall, true);
+        childId.addEventListener('click', childCall, true);
+
+        //If third argument is false then Event Bubbling.
+        //If third argument is true then Event Capturing.
+    </script>
+</body>
+
+</html>

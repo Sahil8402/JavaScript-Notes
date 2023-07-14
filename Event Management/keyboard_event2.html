@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Inconsolta', sans-serif;
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+            color: aliceblue;
+        }
+        
+        .main-div {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-div">
+        <div>
+            <label for="">Your Name</label>
+            <input type="text" name="" id="ice">
+            <br>
+            <label>Choose an ice cream flavour🤩
+            <select id="iceCreams" name="iceCreams" onchange="selectElement()">
+                <option value="">Select One</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="black current">Black current</option>
+                <option value="gulkand">Gulkand</option>
+            </select>
+        </label>
+            <br>
+            <div id="result"></div>
+        </div>
+
+    </div>
+    <script>
+        //const selectElement = () => {
+        //   const inputChange = document.getElementById('ice').value;
+        //   const iceCreams = document.getElementById('iceCreams').value;
+        //   const result = document.getElementById('result');
+        //   result.innerHTML = ` ${inputChange} select ${iceCreams} ice-cream flavour`;
+        //   console.log(`${inputChange} loves ${iceCreams} icecream`);
+        // };
+
+
+        //by referencimg:-
+        const iceCreams = document.getElementById('iceCreams');
+
+        iceCreams.addEventListener('change', () => {
+            const inputChange = document.getElementById('ice').value;
+            const iceCreams = document.getElementById('iceCreams').value;
+            const result = document.getElementById('result');
+            result.innerHTML = ` ${inputChange} select ${iceCreams} ice-cream flavour`;
+            console.log(`${inputChange} loves ${iceCreams} icecream`);
+        });
+    </script>
+</body>
+
+</html>

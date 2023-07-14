@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(16, 10, 78);
+    width: 110vw;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.main-div {
+    color: white;
+}
+
+.counter {
+    color: yellow;
+    font-size: 50px;
+}

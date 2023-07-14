@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Inconsolta', sans-serif;
+            background: black;
+        }
+        
+        #container {
+            width: 100vw;
+            height: 200vh;
+            display: grid;
+            place-items: center;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container"></div>
+
+
+    <script>
+        const container = document.querySelector('#container')
+        const request = new XMLHttpRequest();
+        request.open('GET', "https://restcountries.com/v3.1/name/nepal");
+        request.send();
+
+        //to get the response
+        request.addEventListener('load', function() {
+            //console.log(this.responseText);
+            const [data] = JSON.parse(this.responseText);
+            // console.log(data);
+            console.log(data.name);
+            console.log(data.capital);
+            const htmlData = `
+        <div id="card">
+        <artical class="card">
+            <div class="card-body text-dark">
+                <img src="https://flagcdn.com/w320/np.png" alt="" class="card-body-img">
+                <h1 class="card-body-title">
+                    ${data.nativeName}<span></span>
+                </h1>
+                <p class="card-body-text text-dark">capital: ${data.capital}</p>
+            </div>
+            <div class="card-footer text-dark">
+                <div class="card-footer-social">
+                    <h3>${data.timezones}</h3>
+                    <p>Timezoness</p>
+                </div>
+                <div class="card-footer-social text-dark">
+                    <h3>${data.population}</h3>
+                    <p>population</p>
+                </div>
+                <div class="card-footer-social text-dark">
+                    <h3>${data.demonym}</h3>
+                    <p>Demonym</p>
+                </div>
+            </div>
+        </artical>
+
+    </div>
+            `;
+
+            container.insertAdjacentHTML("afterbegin", htmlData)
+        })
+    </script>
+</body>
+
+
+</html>

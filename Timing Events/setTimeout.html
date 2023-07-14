@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Inconsolta', sans-serif;
+            background: #2a364f;
+        }
+        
+        button {
+            display: inline-block;
+            background: #f88627;
+            color: aliceblue;
+            font-size: 16px;
+            font-weight: normal;
+            width: 132px;
+            text-align: center;
+            border-radius: 3px;
+            transition: 400ms;
+            text-decoration: none;
+            padding: 14px;
+            z-index: 100000;
+            border: none;
+            box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+        }
+        
+        .main-div {
+            color: aliceblue;
+            text-align: center;
+        }
+        
+        p {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div>
+            <p>
+                Want to know my Names🙋‍♂️🙋?
+                <p id="showMyName"></p>
+                <br>
+                <button id="btn">Click here</button>
+            </p>
+        </div>
+    </div>
+    <script>
+        const myName = document.querySelector('#showMyName');
+        const btn = document.querySelector('#btn');
+
+        const showMyName = () => {
+            myName.innerHTML = 'Loading...🤏👻'
+            setTimeout(() => {
+                myName.innerHTML = "Sahil Sakshi"
+            }, 1000)
+        }
+
+        btn.addEventListener('click', showMyName);
+    </script>
+</body>
+
+</html>

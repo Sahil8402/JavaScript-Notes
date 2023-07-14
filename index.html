@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Click the button to display a date after changing the hours.</p>
+    <button onclick="myFunction()">Try it</button>
+    <button class="button-sub" onclick="goBack()">Go Back</button>
+    <p id="demo">sd</p>
+    <p id="time">sd</p>
+    <script>
+        function myFunction() {
+            var t = new Date();
+            t.setHours(5);
+            document.getElementById("demo").innerHTML = t;
+        }
+
+
+        var t = new Date().toLocaleTimeString();
+        document.getElementById("time").innerHTML = t;
+        var d = new Date().toLocaleDateString();
+        document.getElementById("time").innerHTML = d;
+        (function() {
+            setInterval(() => {
+                var d = new Date().toLocaleTimeString();
+                document.getElementById("demo").innerHTML = d;
+            }, 1000)
+        })();
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>

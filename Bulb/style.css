@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(16, 10, 78);
+    width: 95vw;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    color: aliceblue;
+    padding-left: 50px;
+}
+
+button {
+    background-color: yellow;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px 30px;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+}
+
+img {
+    width: 150px;
+}

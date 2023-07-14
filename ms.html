@@ -1,0 +1,156 @@
+<html>
+
+<head>
+
+    <metacharset="UTF-8">
+
+        <metaname="viewport" content="width=device-width, initial-scale=1">
+
+            <title>KeyBoard Music</title>
+            <style>
+                html {
+                    font-size: 12px;
+                    background: url('drums.jpg') top center;
+                    background-size: 80%;
+                }
+                
+                .keys {
+                    display: flex;
+                    flex: 1;
+                    align-items: top;
+                    justify-content: center;
+                }
+                
+                .key {
+                    border: 0.4rem solid blue;
+                    border-radius: 0.5rem;
+                    margin: 1rem;
+                    font-size: 2rem;
+                    padding: 1rem0.5rem;
+                    transition: all 0.01s ease;
+                    width: 5rem;
+                    text-align: center;
+                    color: black;
+                    text-shadow: 000.5rem yellow;
+                }
+            </style>
+
+</head>
+
+<body>
+
+    <divclass="keys">
+
+        <divdata-key="65" class="key">
+
+            <kbd>A</kbd>
+
+            </div>
+
+            <divdata-key="83" class="key">
+
+                <kbd>S</kbd>
+
+                </div>
+
+                <divdata-key="68" class="key">
+
+                    <kbd>D</kbd>
+
+                    </div>
+
+                    <divdata-key="70" class="key">
+
+                        <kbd>F</kbd>
+
+                        </div>
+
+                        <divdata-key="71" class="key">
+
+                            <kbd>G</kbd>
+
+                            </div>
+
+                            <divdata-key="72" class="key">
+
+                                <kbd>H</kbd>
+
+                                </div>
+
+                                <divdata-key="74" class="key">
+
+                                    <kbd>J</kbd>
+
+                                    </div>
+
+                                    <divdata-key="75" class="key">
+
+                                        <kbd>K</kbd>
+
+                                        </div>
+
+                                        <divdata-key="76" class="key">
+
+                                            <kbd>L</kbd>
+
+                                            </div>
+
+                                            </div>
+
+                                            <audiodata-key="65" src="sounds/clap.wav">
+                                                </audio>
+
+                                                <audiodata-key="83" src="sounds/chord.wav">
+                                                    </audio>
+
+                                                    <audiodata-key="68" src="sounds/ride.wav">
+                                                        </audio>
+
+                                                        <audiodata-key="70" src="sounds/openhat.wav">
+                                                            </audio>
+
+                                                            <audiodata-key="71" src="sounds/tink.wav">
+                                                                </audio>
+
+                                                                <audiodata-key="72" src="sounds/kick.wav">
+                                                                    </audio>
+
+                                                                    <audiodata-key="74" src="sounds/swipe.wav">
+                                                                        </audio>
+
+                                                                        <audiodata-key="75" src="sounds/tom.wav">
+                                                                            </audio>
+
+                                                                            <audiodata-key="76" src="sounds/boom.wav">
+                                                                                </audio>
+
+</body>
+
+<script>
+    functionremoveTransition(event); {
+
+        if (event.propertyName !== 'transform');
+        return event.target.classList.remove('playing');
+
+    }
+
+    functionplaySound(event); {
+
+        const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+        const key = document.querySelector(`div[data-key="${event.keyCode}"]`);
+        if (!audio)
+            return key.classList.add('playing');
+        audio.currentTime = 0;
+        audio.play();
+
+    }
+
+
+    const keys = Array.from(document.querySelectorAll('.key'));
+
+    keys.forEach((key) => key.addEventListener('transitionend', removeTransition));
+
+    window.addEventListener('keydown', playSound);
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Inconsolta', sans-serif;
+            background: #2a364f;
+            display: grid;
+            place-items: center;
+            color: aliceblue;
+        }
+        
+        .main-div {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        
+        .effect-1 {
+            height: 23px;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div>
+            <p>
+                A function triggered when the user is pressing a key in the input field.</p><br>
+            <center><input type="text" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()" ;>
+            </center><br>
+            <center>
+                <p id="keys"></p>
+            </center>
+
+        </div>
+    </div>
+    <script>
+        //const keyPress = () => {
+        //  document.getElementById('keys').innerHTML = `You press ${event.key} and it's code is ${event.code}`;
+        //}
+
+        //better to use 2nd and 3rd once
+
+        const keyDown = () => {
+            document.getElementById('keys').innerHTML = `key is Down`;
+            //when we click backslah to delete then it will run
+        }
+
+        const keyUp = () => {
+            document.getElementById('keys').innerHTML = `key is Up`;
+            //when we click backslah to delete then it will run
+        }
+    </script>
+</body>
+
+</html>
